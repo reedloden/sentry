@@ -8,7 +8,7 @@ from sentry.testutils import PluginTestCase
 
 
 class BasicPreprocessorPlugin(Plugin2):
-    def get_event_preprocessors(self):
+    def get_event_preprocessors(self, data=None):
         def remove_extra(data):
             del data['extra']
             return data
